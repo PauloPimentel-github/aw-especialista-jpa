@@ -32,4 +32,7 @@ public class Pedido {
     @Enumerated(EnumType.STRING)
     @Column(name = "status_pedido")
     private StatusPedido statusPedido;
+
+    @Embedded
+    private EnderecoEntregaPedido enderecoEntregaPedido;
 }
