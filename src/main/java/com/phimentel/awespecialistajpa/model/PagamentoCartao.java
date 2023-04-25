@@ -4,10 +4,7 @@ import com.phimentel.awespecialistajpa.model.enums.StatusPagamento;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
@@ -22,6 +19,7 @@ public class PagamentoCartao {
     @Column(name = "pedido_id")
     private Long pedidoId;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status_pagamento")
     private StatusPagamento statusPagamento;
 
