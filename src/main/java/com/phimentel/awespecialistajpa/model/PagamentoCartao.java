@@ -4,10 +4,10 @@ import com.phimentel.awespecialistajpa.model.enums.StatusPagamento;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.math.BigDecimal;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
@@ -19,8 +19,10 @@ public class PagamentoCartao {
     @Id
     private Long id;
 
-    private Integer pedidoId;
+    @Column(name = "pedido_id")
+    private Long pedidoId;
 
+    @Column(name = "status_pagamento")
     private StatusPagamento statusPagamento;
 
     private String numero;

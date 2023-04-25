@@ -3,6 +3,7 @@ package com.phimentel.awespecialistajpa.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -18,10 +19,13 @@ public class ItemPedido {
     @Id
     private Long id;
 
-    private Integer pedidoId;
+    @Column(name = "pedido_id")
+    private Long pedidoId;
 
-    private Integer produtoId;
+    @Column(name = "produto_id")
+    private Long produtoId;
 
+    @Column(name = "preco_produto")
     private BigDecimal precoProduto;
 
     private Integer quantidade;

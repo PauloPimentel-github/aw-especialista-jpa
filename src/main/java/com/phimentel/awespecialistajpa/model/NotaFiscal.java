@@ -3,6 +3,7 @@ package com.phimentel.awespecialistajpa.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -18,9 +19,11 @@ public class NotaFiscal {
     @Id
     private Long id;
 
-    private Integer pedidoId;
+    @Column(name = "pedido_id")
+    private Long pedidoId;
 
     private String xml;
 
+    @Column(name = "data_emissao")
     private Date dataEmissao;
 }

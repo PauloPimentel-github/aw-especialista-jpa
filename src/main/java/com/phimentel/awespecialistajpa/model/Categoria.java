@@ -1,9 +1,9 @@
 package com.phimentel.awespecialistajpa.model;
 
-import com.phimentel.awespecialistajpa.model.enums.GeneroCliente;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -20,5 +20,6 @@ public class Categoria {
 
     private String nome;
 
-    private Integer categoriaId;
+    @Column(name = "categoria_pai_id")
+    private Long categoriaPaiId;
 }

@@ -3,6 +3,7 @@ package com.phimentel.awespecialistajpa.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -19,5 +20,6 @@ public class Estoque {
 
     private Integer quantidade;
 
-    private Integer produtoId;
+    @Column(name = "produto_id")
+    private Long produtoId;
 }

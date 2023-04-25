@@ -4,6 +4,7 @@ import com.phimentel.awespecialistajpa.model.enums.GeneroCliente;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -20,5 +21,6 @@ public class Cliente {
 
     private String nome;
 
+    @Column(name = "genero_cliente")
     private GeneroCliente generoCliente;
 }

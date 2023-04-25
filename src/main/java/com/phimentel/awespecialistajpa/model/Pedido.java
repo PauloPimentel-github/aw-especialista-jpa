@@ -5,6 +5,7 @@ import com.phimentel.awespecialistajpa.model.enums.StatusPedido;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -21,13 +22,17 @@ public class Pedido {
     @Id
     private Long id;
 
+    @Column(name = "data_pedido")
     private LocalDateTime dataPedido;
 
+    @Column(name = "data_conclusao")
     private LocalDateTime dataConclusao;
 
-    private Integer notaFiscalId;
+    @Column(name = "nota_fiscal_id")
+    private Long notaFiscalId;
 
     private BigDecimal total;
 
+    @Column(name = "status_pedido")
     private StatusPedido statusPedido;
 }
