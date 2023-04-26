@@ -13,6 +13,7 @@ import javax.persistence.*;
 public class Cliente {
 
     @EqualsAndHashCode.Include
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
 

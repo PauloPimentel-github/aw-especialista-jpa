@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 public class Pedido {
 
     @EqualsAndHashCode.Include
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
 

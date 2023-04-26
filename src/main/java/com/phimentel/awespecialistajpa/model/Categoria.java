@@ -3,10 +3,7 @@ package com.phimentel.awespecialistajpa.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
@@ -15,6 +12,7 @@ import javax.persistence.Table;
 public class Categoria {
 
     @EqualsAndHashCode.Include
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
 
