@@ -17,11 +17,13 @@ public class ItemPedido {
     @Id
     private Long id;
 
-    @Column(name = "pedido_id")
-    private Long pedidoId;
+    @ManyToOne
+    @JoinColumn(name = "pedido_id")
+    private Pedido pedido;
 
-    @Column(name = "produto_id")
-    private Long produtoId;
+    @ManyToOne
+    @JoinColumn(name = "produto_id")
+    private Produto produto;
 
     @Column(name = "preco_produto")
     private BigDecimal precoProduto;
