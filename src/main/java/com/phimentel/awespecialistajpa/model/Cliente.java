@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
@@ -22,4 +23,7 @@ public class Cliente {
     @Enumerated(EnumType.STRING)
     @Column(name = "genero_cliente")
     private GeneroCliente generoCliente;
+
+    @OneToMany(mappedBy = "cliente")
+    private Set<Pedido> pedidos;
 }
