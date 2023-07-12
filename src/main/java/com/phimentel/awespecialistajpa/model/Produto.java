@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Set;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
@@ -22,4 +23,7 @@ public class Produto {
     private String descricao;
 
     private BigDecimal preco;
+
+    @OneToMany(mappedBy = "produto")
+    private Set<ItemPedido> itens;
 }
