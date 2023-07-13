@@ -17,8 +17,9 @@ public class NotaFiscal {
     @Id
     private Long id;
 
-    @Column(name = "pedido_id")
-    private Long pedidoId;
+    @OneToOne
+    @JoinColumn(name = "pedido_id")
+    private Pedido pedido;
 
     private String xml;
 
