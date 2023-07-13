@@ -24,6 +24,9 @@ public class Produto {
 
     private BigDecimal preco;
 
-    @OneToMany(mappedBy = "produto")
-    private Set<ItemPedido> itens;
+    @ManyToMany
+    @JoinTable(name = "produto_categoria",
+            joinColumns = @JoinColumn(name = "prouto_id"),
+            inverseJoinColumns = @JoinColumn(name = "categoria_id"))
+    private Set<Categoria> categorias;
 }
