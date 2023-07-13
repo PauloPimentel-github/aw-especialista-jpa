@@ -17,8 +17,9 @@ public class PagamentoCartao {
     @Id
     private Long id;
 
-    @Column(name = "pedido_id")
-    private Long pedidoId;
+    @OneToOne
+    @JoinColumn(name = "pedido_id")
+    private Pedido pedido;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status_pagamento")
