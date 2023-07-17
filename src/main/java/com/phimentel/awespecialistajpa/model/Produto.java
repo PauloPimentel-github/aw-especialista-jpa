@@ -29,4 +29,7 @@ public class Produto {
             joinColumns = @JoinColumn(name = "prouto_id"),
             inverseJoinColumns = @JoinColumn(name = "categoria_id"))
     private Set<Categoria> categorias;
+
+    @OneToOne(mappedBy = "produto")
+    private Estoque estoque;
 }

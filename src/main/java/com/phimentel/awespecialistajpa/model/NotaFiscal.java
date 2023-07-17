@@ -17,7 +17,7 @@ public class NotaFiscal {
     @Id
     private Long id;
 
-    @OneToOne
+    @OneToOne(optional = false)
     @JoinColumn(name = "pedido_id")
     private Pedido pedido;
 
