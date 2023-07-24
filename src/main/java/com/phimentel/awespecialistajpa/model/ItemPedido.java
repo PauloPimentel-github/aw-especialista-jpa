@@ -8,20 +8,12 @@ import java.math.BigDecimal;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
-@IdClass(ItemPedidoId.class)
 @Entity
 @Table(name = "itens_pedido")
 public class ItemPedido {
 
-    @EqualsAndHashCode.Include
-    @Id
-    @Column(name = "pedido_id")
-    private Long pedidoId;
-
-    @EqualsAndHashCode.Include
-    @Id
-    @Column(name = "produto_id")
-    private Long produtoId;
+    @EmbeddedId
+    private ItemPedidoId id;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "pedido_id", insertable = false, updatable = false)
