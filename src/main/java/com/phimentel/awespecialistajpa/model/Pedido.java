@@ -39,6 +39,12 @@ public class Pedido {
     @Column(name = "status_pedido")
     private StatusPedido statusPedido;
 
+    @Column(name = "data_criacao", updatable = false)
+    private LocalDateTime dataCriacao;
+
+    @Column(name = "data_ultima_atualizacao", insertable = false)
+    private LocalDateTime dataUltimaAtualizacao;
+
     @Embedded
     private EnderecoEntregaPedido enderecoEntregaPedido;
 
