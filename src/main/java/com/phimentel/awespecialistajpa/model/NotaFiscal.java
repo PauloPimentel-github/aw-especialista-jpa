@@ -13,10 +13,11 @@ import java.util.Date;
 public class NotaFiscal {
 
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
+    @Column(name = "pedido_id")
     private Long id;
 
+    @MapsId
     @OneToOne(optional = false)
     @JoinColumn(name = "pedido_id")
     private Pedido pedido;
