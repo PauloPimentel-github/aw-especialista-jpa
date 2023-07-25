@@ -17,6 +17,7 @@ public class PagamentoCartao {
     @Id
     private Long id;
 
+    @MapsId
     @OneToOne(optional = false)
     @JoinColumn(name = "pedido_id")
     private Pedido pedido;
