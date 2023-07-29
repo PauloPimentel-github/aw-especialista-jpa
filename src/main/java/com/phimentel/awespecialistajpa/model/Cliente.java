@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import java.util.Map;
 import java.util.Set;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -26,6 +27,13 @@ public class Cliente {
     @Enumerated(EnumType.STRING)
     @Column(name = "genero_cliente")
     private GeneroCliente generoCliente;
+
+    @ElementCollection
+    @CollectionTable(name = "cliente_contato",
+            joinColumns = @JoinColumn(name = "cliente_id"))
+    @MapKeyColumn(name = "tipo")
+    @Column(name = "descricao")
+    private Map<String, String> contatos;
 
     @OneToMany(mappedBy = "cliente")
     private Set<Pedido> pedidos;
