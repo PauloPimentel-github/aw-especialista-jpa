@@ -26,6 +26,9 @@ public class Produto {
 
     private BigDecimal preco;
 
+    @Lob
+    private byte[] foto;
+
     @Column(name = "data_criacao", updatable = false)
     private LocalDateTime dataCriacao;
 
