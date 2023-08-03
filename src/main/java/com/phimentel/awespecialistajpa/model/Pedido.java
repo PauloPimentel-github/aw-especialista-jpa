@@ -45,5 +45,5 @@ public class Pedido extends EntidadeBaseLong {
     private Set<ItemPedido> itens;
 
     @OneToOne(mappedBy = "pedido")
-    private PagamentoCartao pagamentoCartao;
+    private Pagamento pagamento;
 }
