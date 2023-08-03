@@ -2,20 +2,13 @@ package com.phimentel.awespecialistajpa.model;
 
 import com.phimentel.awespecialistajpa.model.enums.StatusPagamento;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
 @Entity
 @Table(name = "pagamentos_boleto")
-public class PagamentoBoleto {
-
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Id
-    private Long id;
+public class PagamentoBoleto extends EntidadeBaseLong {
 
     @Column(name = "pedido_id")
     private Long pedidoId;

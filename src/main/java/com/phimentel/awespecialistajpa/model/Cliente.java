@@ -14,12 +14,7 @@ import java.util.Set;
 @SecondaryTable(name = "cliente_detalhe", pkJoinColumns = @PrimaryKeyJoinColumn(name = "cliente_id"))
 @Entity
 @Table(name = "clientes")
-public class Cliente {
-
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Id
-    private Long id;
+public class Cliente extends EntidadeBaseLong {
 
     private String nome;
 

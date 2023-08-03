@@ -1,20 +1,16 @@
 package com.phimentel.awespecialistajpa.model;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Data
 @Entity
 @Table(name = "estoques")
-public class Estoque {
-
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Id
-    private Long id;
+public class Estoque extends EntidadeBaseLong{
 
     private Integer quantidade;
 
