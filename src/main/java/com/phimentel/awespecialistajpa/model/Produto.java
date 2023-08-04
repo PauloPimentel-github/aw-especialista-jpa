@@ -10,7 +10,9 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "produtos")
+@Table(name = "produtos",
+        uniqueConstraints = { @UniqueConstraint(name = "unq_nome", columnNames = { "nome" }) },
+        indexes = { @Index(name = "idx_nome", columnList = "nome") })
 public class Produto extends EntidadeBaseLong {
 
     private String nome;
