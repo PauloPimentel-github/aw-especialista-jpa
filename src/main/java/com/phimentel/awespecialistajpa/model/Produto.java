@@ -18,7 +18,8 @@ public class Produto extends EntidadeBaseLong {
     @Column(name = "nome", length = 100, nullable = false)
     private String nome;
 
-    @Column(columnDefinition = "varchar(275) not null default 'descricao'")
+    @Lob
+    @Column(nullable = false)
     private String descricao;
 
     private BigDecimal preco;
