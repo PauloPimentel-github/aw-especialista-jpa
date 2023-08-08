@@ -2,15 +2,12 @@ package com.phimentel.awespecialistajpa.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "estoques")
-public class Estoque extends EntidadeBaseLong{
+public class Estoque extends EntidadeBaseLong {
 
     private Integer quantidade;
 

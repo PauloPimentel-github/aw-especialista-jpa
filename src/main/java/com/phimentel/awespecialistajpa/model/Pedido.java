@@ -26,10 +26,11 @@ public class Pedido extends EntidadeBaseLong {
     @OneToOne(mappedBy = "pedido")
     private NotaFiscal notaFiscal;
 
+    @Column(precision = 19, scale = 2, nullable = false)
     private BigDecimal total;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status_pedido")
+    @Column(name = "status_pedido", length = 30, nullable = false)
     private StatusPedido statusPedido;
 
     @Column(name = "data_criacao", updatable = false)
