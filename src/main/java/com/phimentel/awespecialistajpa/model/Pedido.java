@@ -14,7 +14,7 @@ import java.util.Set;
 public class Pedido extends EntidadeBaseLong {
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "cliente_id", nullable = false, foreignKey = @ForeignKey(name = "fk_pedido_cliente"))
     private Cliente cliente;
 
     @Column(name = "data_pedido")
