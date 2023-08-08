@@ -18,15 +18,17 @@ import java.util.Set;
         indexes = { @Index(name = "idx_nome", columnList = "nome") })
 public class Cliente extends EntidadeBaseLong {
 
+    @Column(length = 100, nullable = false)
     private String nome;
 
+    @Column(length = 11, nullable = false)
     private String cpf;
 
     @Transient
     private String primeiroNome;
 
     @Enumerated(EnumType.STRING)
-    @Column(table = "cliente_detalhe", name = "genero_cliente")
+    @Column(table = "cliente_detalhe", name = "genero_cliente", length = 30, nullable = false)
     private GeneroCliente generoCliente;
 
     @Column(name = "data_nascimento", table = "cliente_detalhe")

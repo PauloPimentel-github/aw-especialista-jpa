@@ -33,7 +33,7 @@ public class Pedido extends EntidadeBaseLong {
     @Column(name = "status_pedido", length = 30, nullable = false)
     private StatusPedido statusPedido;
 
-    @Column(name = "data_criacao", updatable = false)
+    @Column(name = "data_criacao", updatable = false, nullable = false)
     private LocalDateTime dataCriacao;
 
     @Column(name = "data_ultima_atualizacao", insertable = false)

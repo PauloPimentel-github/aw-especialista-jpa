@@ -11,6 +11,7 @@ import java.util.Set;
         uniqueConstraints = { @UniqueConstraint(name = "unq_nome", columnNames = { "nome" }) })
 public class Categoria extends EntidadeBaseLong {
 
+    @Column(length = 100, nullable = false)
     private String nome;
 
     @ManyToOne

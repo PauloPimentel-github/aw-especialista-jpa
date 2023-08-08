@@ -20,6 +20,6 @@ public abstract class Pagamento extends EntidadeBaseLong {
     private Pedido pedido;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status_pagamento")
+    @Column(name = "status_pagamento", length = 30, nullable = false)
     private StatusPagamento statusPagamento;
 }
